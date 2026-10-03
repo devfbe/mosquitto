@@ -240,6 +240,9 @@ LIBMOSQ_COMMON:=-Wl,--whole-archive ${R}/libcommon/libmosquitto_common.a -Wl,--n
 
 ifeq ($(WITH_TLS),yes)
 	LOCAL_CPPFLAGS+=-DWITH_TLS
+	# libmosquitto_common uses OpenSSL, so it must come before -lssl/-lcrypto
+	# when linking statically.
+	LIBMOSQ_COMMON+=-lssl -lcrypto
 	ifeq ($(WITH_TLS_PSK),yes)
 		LOCAL_CPPFLAGS+=-DWITH_TLS_PSK
 	endif
