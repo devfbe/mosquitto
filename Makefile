@@ -66,7 +66,7 @@ DISTFILES= \
 	THANKS.txt \
 	vcpkg.json
 
-.PHONY : all mosquitto api docs binary check clean reallyclean test test-compile install uninstall dist sign copy localdocker
+.PHONY : all mosquitto api docs binary check clean reallyclean test test-compile install uninstall dist sign copy localdocker static-arm64-deb
 
 all : $(MAKE_ALL)
 
@@ -180,3 +180,8 @@ localdocker : reallyclean
 	cp dockertmp/mosq.tar.gz docker/local
 	rm -rf dockertmp/
 	cd docker/local && docker build . -t eclipse-mosquitto:local --build-arg VERSION=${VERSION}
+
+# Fully static aarch64 binaries and Debian package, see
+# packaging/static-arm64/README.md. Requires Nix.
+static-arm64-deb :
+	packaging/static-arm64/build.sh

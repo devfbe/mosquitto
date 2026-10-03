@@ -1,0 +1,9 @@
+/etc/init.d/mosquitto
+/etc/logrotate.d/mosquitto
+/etc/mosquitto/aclfile.example
+/etc/mosquitto/ca_certificates/README
+/etc/mosquitto/certs/README
+/etc/mosquitto/conf.d/README
+/etc/mosquitto/mosquitto.conf
+/etc/mosquitto/pskfile.example
+/etc/mosquitto/pwfile.example

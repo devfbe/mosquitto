@@ -1,0 +1,21 @@
+Package: mosquitto
+Version: @VERSION@
+Architecture: arm64
+Maintainer: Felix Becker <felix+git@becker.koeln>
+Installed-Size: @INSTALLED_SIZE@
+Depends: adduser (>= 3.10)
+Suggests: apparmor
+Provides: mosquitto-clients
+Conflicts: mosquitto-clients
+Replaces: mosquitto-clients
+Section: net
+Priority: optional
+Homepage: https://mosquitto.org/
+Description: MQTT version 5.0/3.1.1/3.1 compatible message broker (static build)
+ Statically linked build of Eclipse Mosquitto including the broker, the
+ command line clients (mosquitto_pub, mosquitto_sub, mosquitto_rr) and the
+ tools mosquitto_passwd, mosquitto_ctrl, mosquitto_signal and
+ mosquitto_db_dump. It has no shared library dependencies.
+ .
+ Filesystem layout, configuration and service setup follow the Debian
+ mosquitto package.
